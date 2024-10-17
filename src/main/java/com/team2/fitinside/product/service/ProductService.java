@@ -74,15 +74,103 @@ public class ProductService {
     }
 
     // 상품 등록 (이미지 업로드 포함)
+//    @Transactional
+//    public ProductResponseDto createProduct(ProductCreateDto productCreateDto, List<MultipartFile> images) {
+//        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto);
+//
+//        Category category = categoryRepository.findById(productCreateDto.getCategoryId())
+//                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
+//        product.setCategory(category);
+//
+//        // S3 이미지 업로드 처리 (이미지 없으면 빈 리스트로 처리)
+//        List<String> imageUrls = uploadImages(images);
+//
+//        // 이미지가 없을 경우 기본 더미 이미지 추가
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        product.setProductImgUrls(imageUrls);
+//        Product savedProduct = productRepository.save(product);
+//
+//        return ProductMapper.INSTANCE.toDto(savedProduct);
+//    }
+
+
+    // 상품 등록 (이미지 업로드 포함)
+//    @Transactional
+//    public ProductResponseDto createProduct(ProductCreateDto productCreateDto, List<MultipartFile> images) {
+//        // 카테고리 이름을 통해 카테고리 조회
+//        Category category = categoryRepository.findByName(productCreateDto.getCategoryName())
+//                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
+//
+//        // ProductCreateDto를 Entity로 변환
+//        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto);
+//        product.setCategory(category);
+//
+//        // S3 이미지 업로드 처리
+//        List<String> imageUrls = uploadImages(images);
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL); // 이미지가 없을 경우 기본 더미 이미지 추가
+//        }
+//
+//        product.setProductImgUrls(imageUrls);
+//        Product savedProduct = productRepository.save(product);
+//
+//        return ProductMapper.INSTANCE.toDto(savedProduct);
+//    }
+
+//    @Transactional
+//    public ProductResponseDto createProduct(ProductCreateDto productCreateDto, List<MultipartFile> images) {
+//        // 여러 개의 카테고리를 처리
+//        List<Category> categories = productCreateDto.getCategories();
+//
+//        // 등록할 카테고리가 존재하는지 확인하고 카테고리 리스트를 설정
+//        if (categories == null || categories.isEmpty()) {
+//            throw new CustomException(ErrorCode.CATEGORY_NOT_FOUND);
+//        }
+//
+//        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto);
+//        product.setCategories(categories); // Product에 카테고리 리스트를 설정
+//
+//        // S3 이미지 업로드 처리
+//        List<String> imageUrls = uploadImages(images);
+//
+//        // 이미지가 없을 경우 기본 더미 이미지 추가
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        product.setProductImgUrls(imageUrls);
+//        Product savedProduct = productRepository.save(product);
+//
+//        return ProductMapper.INSTANCE.toDto(savedProduct);
+//    }
+
+//    @Transactional
+//    public ProductResponseDto createProduct(ProductCreateDto productCreateDto, List<MultipartFile> images) {
+//        // ProductMapper를 사용해 문자열로 받은 카테고리명을 Category 엔티티로 변환
+//        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto, categoryRepository);
+//
+//        // S3 이미지 업로드 처리
+//        List<String> imageUrls = uploadImages(images);
+//
+//        // 이미지가 없을 경우 기본 더미 이미지 추가
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        product.setProductImgUrls(imageUrls);
+//        Product savedProduct = productRepository.save(product);
+//
+//        return ProductMapper.INSTANCE.toDto(savedProduct);
+//    }
+
     @Transactional
     public ProductResponseDto createProduct(ProductCreateDto productCreateDto, List<MultipartFile> images) {
-        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto);
+        Product product = ProductMapper.INSTANCE.toEntity(productCreateDto, categoryRepository);
 
-        Category category = categoryRepository.findById(productCreateDto.getCategoryId())
-                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
-        product.setCategory(category);
-
-        // S3 이미지 업로드 처리 (이미지 없으면 빈 리스트로 처리)
+        // S3 이미지 업로드 처리
         List<String> imageUrls = uploadImages(images);
 
         // 이미지가 없을 경우 기본 더미 이미지 추가
@@ -97,22 +185,98 @@ public class ProductService {
     }
 
 
+
+
+
     // 상품 수정 (이미지 업로드 포함)
+//    @Transactional
+//    public ProductResponseDto updateProduct(Long id, ProductUpdateDto productUpdateDto, List<MultipartFile> images) {
+//        Product existingProduct = productRepository.findById(id)
+//                .orElseThrow(() -> new CustomException(ErrorCode.PRODUCT_NOT_FOUND));
+//
+//        Product updatedProduct = ProductMapper.INSTANCE.toEntity(id, productUpdateDto);
+//
+//        Category category = categoryRepository.findById(productUpdateDto.getCategoryId())
+//                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
+//        updatedProduct.setCategory(category);
+//
+//        // S3 이미지 업데이트 처리
+//        List<String> imageUrls = uploadImages(images);
+//
+//        // 이미지가 없을 경우 기본 더미 이미지 추가
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        updatedProduct.setProductImgUrls(imageUrls);
+//        productRepository.save(updatedProduct);
+//
+//        return ProductMapper.INSTANCE.toDto(updatedProduct);
+//    }
+
+//    @Transactional
+//    public ProductResponseDto updateProduct(Long id, ProductUpdateDto productUpdateDto, List<MultipartFile> images) {
+//        // 기존 상품 엔티티 조회
+//        Product existingProduct = productRepository.findById(id)
+//                .orElseThrow(() -> new CustomException(ErrorCode.PRODUCT_NOT_FOUND));
+//
+//        // 카테고리 업데이트 처리
+//        Category category = categoryRepository.findById(productUpdateDto.getCategoryId())
+//                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
+//        existingProduct.setCategory(category);
+//
+//        // 상품 정보 업데이트 (기존 엔티티에 새로운 정보 반영)
+//        ProductMapper.INSTANCE.updateProductFromDto(productUpdateDto, existingProduct);
+//
+//        // S3 이미지 업데이트 처리
+//        List<String> imageUrls = uploadImages(images);
+//
+//        // 이미지가 없을 경우 기본 더미 이미지 추가
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        existingProduct.setProductImgUrls(imageUrls);
+//
+//        // 업데이트된 상품 엔티티 저장
+//        productRepository.save(existingProduct);
+//
+//        // DTO로 변환하여 반환
+//        return ProductMapper.INSTANCE.toDto(existingProduct);
+//    }
+
+//    @Transactional
+//    public ProductResponseDto updateProduct(Long id, ProductUpdateDto productUpdateDto, List<MultipartFile> images) {
+//        Product existingProduct = productRepository.findById(id)
+//                .orElseThrow(() -> new CustomException(ErrorCode.PRODUCT_NOT_FOUND));
+//
+//        List<Category> categories = categoryRepository.findByNameIn(productUpdateDto.getCategories())
+//                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
+//
+//        Product updatedProduct = ProductMapper.INSTANCE.toEntity(id, productUpdateDto);
+//        updatedProduct.setCategories(categories);
+//
+//        List<String> imageUrls = uploadImages(images);
+//        if (imageUrls.isEmpty()) {
+//            imageUrls.add(DEFAULT_IMAGE_URL);
+//        }
+//
+//        updatedProduct.setProductImgUrls(imageUrls);
+//        productRepository.save(updatedProduct);
+//
+//        return ProductMapper.INSTANCE.toDto(updatedProduct);
+//    }
+
     @Transactional
     public ProductResponseDto updateProduct(Long id, ProductUpdateDto productUpdateDto, List<MultipartFile> images) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new CustomException(ErrorCode.PRODUCT_NOT_FOUND));
 
-        Product updatedProduct = ProductMapper.INSTANCE.toEntity(id, productUpdateDto);
+        // 카테고리 매핑
+        Product updatedProduct = ProductMapper.INSTANCE.toEntity(id, productUpdateDto, categoryRepository);
 
-        Category category = categoryRepository.findById(productUpdateDto.getCategoryId())
-                .orElseThrow(() -> new CustomException(ErrorCode.CATEGORY_NOT_FOUND));
-        updatedProduct.setCategory(category);
-
-        // S3 이미지 업데이트 처리
+        // 이미지 업데이트 처리
         List<String> imageUrls = uploadImages(images);
-
-        // 이미지가 없을 경우 기본 더미 이미지 추가
         if (imageUrls.isEmpty()) {
             imageUrls.add(DEFAULT_IMAGE_URL);
         }
@@ -122,6 +286,7 @@ public class ProductService {
 
         return ProductMapper.INSTANCE.toDto(updatedProduct);
     }
+
 
 
 

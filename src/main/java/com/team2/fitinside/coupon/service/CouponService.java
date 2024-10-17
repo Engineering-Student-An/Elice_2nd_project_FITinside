@@ -1,5 +1,6 @@
 package com.team2.fitinside.coupon.service;
 
+import com.team2.fitinside.category.entity.Category;
 import com.team2.fitinside.config.SecurityUtil;
 import com.team2.fitinside.coupon.dto.AvailableCouponResponseDto;
 import com.team2.fitinside.coupon.dto.AvailableCouponResponseWrapperDto;
@@ -28,6 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -80,26 +82,33 @@ public class CouponService {
 
         Product product = productRepository.findById(productId).orElseThrow(() -> new CustomException(ErrorCode.PRODUCT_NOT_FOUND));
 
-        List<CouponMember> couponMembers = couponMemberRepository.findByMember_IdAndCoupon_Category_Id(loginMemberId, product.getCategory().getId());
+        // 제품의 모든 카테고리 ID 추출
+        List<Long> categoryIds = product.getCategories().stream()
+                .map(Category::getId) // 카테고리 ID 추출
+                .collect(Collectors.toList());
+
+        // 여러 카테고리에 해당하는 쿠폰을 조회
+        List<CouponMember> couponMembers = couponMemberRepository.findByMember_IdAndCoupon_Category_IdIn(loginMemberId, categoryIds);
 
         List<AvailableCouponResponseDto> dtos = new ArrayList<>();
         for (CouponMember couponMember : couponMembers) {
 
             // 쿠폰이 유효하지 않은 경우
-            if(!couponMember.getCoupon().isActive()) continue;
+            if (!couponMember.getCoupon().isActive()) continue;
 
             // 상품 가격이 최소 주문 금액보다 적은 경우
-            if(couponMember.getCoupon().getMinValue() > product.getPrice()) continue;
+            if (couponMember.getCoupon().getMinValue() > product.getPrice()) continue;
 
-            // 상품을 이미 사용한 경우
-            if(couponMember.isUsed()) continue;
+            // 이미 사용한 쿠폰일 경우
+            if (couponMember.isUsed()) continue;
 
+            // 쿠폰 정보를 DTO로 변환
             AvailableCouponResponseDto availableCouponResponseDto = CouponMapper.INSTANCE.toAvailableCouponResponseDto(couponMember.getCoupon());
             availableCouponResponseDto.setCouponMemberId(couponMember.getId());
             dtos.add(availableCouponResponseDto);
         }
 
-        // 성공메시지 + List<CouponResponseDto> -> CouponResponseWrapperDto 반환
+        // 쿠폰 목록 반환
         return new AvailableCouponResponseWrapperDto("쿠폰 목록 조회 완료했습니다!", dtos);
     }
 

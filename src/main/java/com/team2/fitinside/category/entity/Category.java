@@ -1,5 +1,6 @@
 package com.team2.fitinside.category.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.team2.fitinside.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -39,6 +40,9 @@ public class Category {
     // 이미지 URL 필드 추가
     @Column(name = "image_url")
     private String imageUrl;
+
+    @ManyToMany(mappedBy = "categories") // Product 엔티티와의 다대다 관계를 양방향으로 설정
+    private List<Product> products = new ArrayList<>();
 
     // 삭제 시 isDeleted를 true로 설정하는 메서드
     public void delete() {

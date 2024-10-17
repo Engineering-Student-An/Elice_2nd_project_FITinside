@@ -1,5 +1,6 @@
 package com.team2.fitinside.product.dto;
 
+import com.team2.fitinside.category.entity.Category;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.List;
 public class ProductCreateDto {
 
     private Long categoryId;
+    private List<String> categories;
     private String productName;
     private Integer price;
     private String info;

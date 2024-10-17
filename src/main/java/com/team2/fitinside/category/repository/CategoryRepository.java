@@ -11,4 +11,7 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     // Soft delete가 되지 않은 특정 ID의 카테고리 조회
     Optional<Category> findByIdAndIsDeletedFalse(Long id);
+
+    Optional<Category> findByNameAndIsDeletedFalse(String name);
+
 }

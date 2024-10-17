@@ -27,9 +27,18 @@ public class Product {
     private Long id;
 
     // 카테고리와의 다대일 관계 (ManyToOne)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "category_id", nullable = false)
+//    private Category category;
+
+    // 카테고리와의 다대다 관계 (ManyToMany)
+    @ManyToMany
+    @JoinTable(
+            name = "product_category", // 중간 테이블 이름
+            joinColumns = @JoinColumn(name = "product_id"), // Product 테이블의 외래키
+            inverseJoinColumns = @JoinColumn(name = "category_id") // Category 테이블의 외래키
+    )
+    private List<Category> categories = new ArrayList<>();
 
     @Column(name = "product_name", length = 100, nullable = false)
     private String productName;
@@ -77,8 +86,34 @@ public class Product {
     }
 
     // 카테고리를 설정하는 메서드
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+
+    // 카테고리 리스트를 전체적으로 설정하는 메서드
+    public void setCategories(List<Category> categories) {
+        this.categories.clear();  // 기존 카테고리 리스트를 비운다.
+        if (categories != null) {
+            this.categories.addAll(categories);  // 새로운 카테고리 리스트를 추가한다.
+        }
+    }
+
+    // 하나의 카테고리를 설정하는 메서드
     public void setCategory(Category category) {
-        this.category = category;
+        this.categories.clear();  // 기존 카테고리를 모두 제거한다.
+        if (category != null) {
+            this.categories.add(category);  // 새로운 카테고리를 추가한다.
+        }
+    }
+
+    // 카테고리 추가 메서드
+    public void addCategory(Category category) {
+        this.categories.add(category);
+    }
+
+    // 카테고리 제거 메서드
+    public void removeCategory(Category category) {
+        this.categories.remove(category);
     }
 
     // 삭제 상태 설정 메서드
