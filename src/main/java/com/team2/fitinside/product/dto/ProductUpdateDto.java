@@ -1,6 +1,5 @@
 package com.team2.fitinside.product.dto;
 
-import com.team2.fitinside.category.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +14,6 @@ import java.util.List;
 public class ProductUpdateDto {
 
     private Long categoryId;
-    private List<String> categories;
     private String productName;
     private Integer price;
     private String info;

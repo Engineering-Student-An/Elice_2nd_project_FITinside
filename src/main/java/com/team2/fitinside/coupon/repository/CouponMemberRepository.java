@@ -22,7 +22,7 @@ public interface CouponMemberRepository extends JpaRepository<CouponMember, Long
     @Query("SELECT cm FROM CouponMember cm " +
             "WHERE cm.member.id = :memberId AND " +
             "(cm.coupon.category.id = :categoryId OR cm.coupon.category IS NULL)")
-    List<CouponMember> findByMember_IdAndCoupon_Category_IdIn(@Param("memberId") Long memberId, @Param("categoryId") List<Long> categoryIds);
+    List<CouponMember> findByMember_IdAndCoupon_Category_Id(@Param("memberId") Long memberId, @Param("categoryId") Long categoryId);
 
     boolean existsByCoupon_Code(String code);
 

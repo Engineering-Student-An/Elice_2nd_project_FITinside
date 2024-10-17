@@ -1,6 +1,5 @@
 package com.team2.fitinside.product.dto;
 
-import com.team2.fitinside.category.entity.Category;
 import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,11 +12,8 @@ import java.util.List;
 @Setter
 public class ProductInsertDto {
 
-//    @NotNull(message = "카테고리 ID는 필수 입력 값입니다.")
-//    private Long categoryId;
-
-    @NotBlank(message = "카테고리명은 필수 입력 값입니다.")
-    private List<String> categories;
+    @NotNull(message = "카테고리 ID는 필수 입력 값입니다.")
+    private Long categoryId;
 
     @NotBlank(message = "상품명은 필수 입력 값입니다.")
     private String productName;
