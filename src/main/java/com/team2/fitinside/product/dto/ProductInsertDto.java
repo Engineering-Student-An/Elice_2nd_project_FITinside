@@ -1,6 +1,5 @@
 package com.team2.fitinside.product.dto;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.validation.constraints.NotBlank;
