@@ -119,7 +119,7 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 ## ERD
 
-<img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2Fc2689960-5c8a-4f77-9f56-d283a3d1d3dd%2Fft.png/size/w=2000?exp=1730266617&sig=2nskIwLp0pwaCdt0yzxzo-k2qY5E1NVyB3Hc8Hqr5gg" alt="image" width="500px">
+![ft](https://github.com/user-attachments/assets/2a339199-cab2-48a6-bdf5-dc9ebff0b57d)
 
 ---
 
@@ -393,7 +393,7 @@ src
 ---
 
 ## 상세 기능
-- https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C
+- [기능 명세서](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C)
 
 ---
 
@@ -467,7 +467,7 @@ src
 ---
 
 ## 상세 API 명세서
-- https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/api-%EB%AA%85%EC%84%B8%EC%84%9C
+- [API 명세서](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/api-%EB%AA%85%EC%84%B8%EC%84%9C)
 
 ---
 
