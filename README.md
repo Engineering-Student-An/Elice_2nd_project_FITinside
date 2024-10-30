@@ -1,5 +1,7 @@
 ## 프로젝트 소개
 
+[FITinside](https://fitinside.netlify.app)
+
 <img src="https://github.com/user-attachments/assets/098762e0-b166-4a4a-8e7c-687eda22015a" alt="image" width="300px"/>
 
 
