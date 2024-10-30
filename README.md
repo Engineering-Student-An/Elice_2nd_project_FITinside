@@ -264,15 +264,15 @@ src
 
 - 이메일, 비밀번호 기반의 로그인 기능
 
-  <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2F7aced914-ba72-46b9-8c49-b6cd0036a711%2FFITinside-Chrome-2024-10-24-15-54-44.gif/size/?exp=1730261954&sig=JiyUsIdKOIvR43AnQqAa3FCnkZ59j8LrFXqYxVRavPM" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/6e89f6a2-20f6-41ec-af66-f6098f3f8ae2" alt="image" width="300px">
 
 - 이메일, 비밀번호 기반의 회원가입 기능
 
-  <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2F7f0806ca-9b78-4f0c-b188-b791a7eb1c93%2FFITinside-Chrome-2024-10-24-15-20-15.gif/size/?exp=1730262062&sig=uhaTZ402mgJVnI_n_X1H8VMspB3hpBeIQ5Z7ioPUZ7A" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/5b0e013d-fb8d-4bd3-ad0a-23be6af86948" alt="image" width="300px">
 
 - Google API Cloud 연동한 로그인 기능
 
-  <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2Fccb51f22-55e3-4c64-b291-45ebcaf3f66a%2FFITinside-Chrome-2024-10-24-15-54-44.gif/size/?exp=1730262074&sig=Q_ZLoXMWTdFwcteUBFbfhyn7T68Xx2gD5Hd84YEZBIs" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/c4854044-b49f-40c3-8dbb-c5d23853cdac" alt="image" width="300px">
 
 - 클라이언트에 저장된 AccessToken으로 로그인 유지 기능
 - 토큰 탈취 대책으로 짧은 수명의 AccessToken, 자동 재발급을 위한 RefreshToken 쿠키 저장
@@ -283,7 +283,7 @@ src
 - 배너의 조회, 생성, 수정, 삭제 가능
 - 배너를 통한 url 연결 기능
 
-<img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2Fce6cf0c4-bb7e-4911-8a40-f4e276cbd6f5%2F%EB%B0%B0%EB%84%881.gif/size/?exp=1730262095&sig=8pjDOnFSXwmbcTvYmAVX20Ya8tMKe7ivGzfjDBhvRrQ" alt="image" width="300px">
+<img src="https://github.com/user-attachments/assets/a906bbee-68a5-435b-bf45-69ccabf26bce" alt="image" width="300px">
 
 ### 카테고리
 
@@ -295,40 +295,41 @@ src
 
   - 이미지 포함 카테고리
 
+
     이미지와 포함 카테고리 조회 가능
 
-  <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2Fba53116d-33d8-4879-95be-62f62a014bba%2F%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC2.gif/size/?exp=1730262109&sig=Q5vksVPX_nfSv1k0MJxAChVACx-fNBjiY3IgwpAn9gk" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/636d55f6-d024-4b5a-ad4e-c1ae2f36f1e0" alt="image" width="300px">
 
 - 관리자
   
   - 카테고리 생성, 수정, 삭제 가능(이미지와 정렬 순서 추가 가능)
 
-  <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Fd85fd78d-de88-4966-9b27-62e3e2e8c2a0%2F4e0f1478-936a-4e65-9ae6-21d087747eb8%2F%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC1.gif/size/?exp=1730262132&sig=c3GT-C1TlzzSuvkKuJ9AWuofDk4rLS-eMZ94yXBbuCA" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/c2ad5116-3af8-42c2-8c65-3f65acc80410" alt="image" width="300px">
 
 ### 상품
 
 - 공통
   - 상품 조회 & 장바구니로 이동
 
-<img src="https://private-user-images.githubusercontent.com/139744625/381397539-8b01435e-8189-4868-82b3-97e6b591a770.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjQ3ODUsIm5iZiI6MTczMDI2NDQ4NSwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxMzk3NTM5LThiMDE0MzVlLTgxODktNDg2OC04MmIzLTk3ZTZiNTkxYTc3MC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTAxMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MWU2MjUyMGY3NWZhZWNiNTMyMzIxOWZkYTY0OTY3NjA4MTg5Zjc3ZTFiM2JkNWMxMTNiNTNiZTVhNzY2ZjUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.aOdZt9ngsYVRKXEUK6qx7Nc2acBOEDO1WFYxFpQD7ko" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/cc77cb5b-0e30-4f00-aafc-6448ed9d62ea" alt="image" width="300px">
 
 - 관리자 페이지
   - 상품 조회 & 상품 등록
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381398461-3dee9d31-ac9b-4524-9c5c-b3c8a48eb2bb.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjUxMjMsIm5iZiI6MTczMDI2NDgyMywicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxMzk4NDYxLTNkZWU5ZDMxLWFjOWItNDUyNC05YzVjLWIzYzhhNDhlYjJiYi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTA3MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zYmFhNDhlYjlhMmE4NDQ0MmIwZGMwZGU0NDIyYmM5YzAyOTE4NzZhNDdlNzYwNThhNjRhMGNkOGJkZTJiMmE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.uls38_DLM1icy52MrhgqN9pF9-kQlkqkqPW79kJPt8k" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/91d309a7-568d-4a0f-9b5b-b72358fb2c4e" alt="image" width="300px">
 
   - 상품 관련 데이터를 수정
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381399115-804f2c29-49f6-47fc-a0f6-2cf49bbd35a5.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjUyNzcsIm5iZiI6MTczMDI2NDk3NywicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxMzk5MTE1LTgwNGYyYzI5LTQ5ZjYtNDdmYy1hMGY2LTJjZjQ5YmJkMzVhNS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTA5MzdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02OTZiZDI3YzdiZjhlMmVhNGE5NzcyYTE2NzlkMjllODYzNjZjNzgxZjEwMThjYzM3N2QxZGRmNjhmMjNmOWM0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.GKUR7DaRjg2yHvHHyi1gW26-GaNYc7LqBd33Q_ZgB-U" alt="image" width="300px">  
+  <img src="https://github.com/user-attachments/assets/6048e5e5-ec50-4060-8f10-7ec9b4ebae75" alt="image" width="300px">  
 
   - 상품 삭제
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381399961-2351f744-3d85-4459-8c4f-9c8bd9d9fd5c.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjUzODksIm5iZiI6MTczMDI2NTA4OSwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxMzk5OTYxLTIzNTFmNzQ0LTNkODUtNDQ1OS04YzRmLTljOGJkOWQ5ZmQ1Yy5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTExMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OTgyNDdmMzQ0M2NkMmIzYzBmYjEyZTNiNTk0MTVhOGZkY2YxM2ZhMjI2ZDM2MGYzNTBmNjAwZGFiY2YyNDgxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.4VFTMN6ckOU_4f8r_GQu6Ff8mnl_TERp-pwTpMRHgmk" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/bff79e5c-ef98-4baa-b1b9-dada8ba90cd7" alt="image" width="300px">
 
 
 ### 장바구니
 
-<img src="https://private-user-images.githubusercontent.com/139744625/381400553-151c1383-af0a-4cb2-9e9c-634892289fcd.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU1MDMsIm5iZiI6MTczMDI2NTIwMywicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAwNTUzLTE1MWMxMzgzLWFmMGEtNGNiMi05ZTljLTYzNDg5MjI4OWZjZC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTEzMjNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNDBiNGQ2OTI3YzM1ODc3M2MzZTk2NGNlYTg1YjlkOTM5MzUyMDQ0MmM4ODQxZmUwZjg3Yzg5NTQ3ODk1ODgxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0sp9x4aajsCkIp0wn8Zis67rMfsyZiiIXzGht_omS-E" alt="image" width="300px">
+<img src="https://github.com/user-attachments/assets/6b3b604a-5762-47ac-a32c-6da2db66daa8" alt="image" width="300px">
 
 - 비회원/회원 구분없이 장바구니 추가 가능
 - 장바구니 정보가 비회원은 로컬스토리지, 회원은 db에 저장
@@ -339,7 +340,7 @@ src
 
 - 관리자
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381400974-f5a734a7-72a4-4eb2-b5e0-f552273fcdab.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU1ODAsIm5iZiI6MTczMDI2NTI4MCwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAwOTc0LWY1YTczNGE3LTcyYTQtNGViMi1iNWUwLWY1NTIyNzNmY2RhYi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTE0NDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZmE3MmEyN2Q5N2Q2ZGZjMjcwNGM1MGZjYjFiZjRiZGE4ZDVkMzg5NzZmMjU5ZDEyNjcyZTJkNDYzNmY4YzY2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.9Pp84LvGeuoos-KwdcLBfmIC1IBw63tJsbZDm0oydBo" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/9e74e727-1240-496b-8e8a-690647a760e1" alt="image" width="300px">
 
   - 쿠폰 생성, 비활성화 가능
   - 쿠폰 목록 (전체 / 활성화만) 조회 (만료일 기준 오름차순 정렬, 페이지네이션 적용) 가능
@@ -348,7 +349,7 @@ src
 
 - 회원
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381400996-438af493-3205-4944-b9cd-92075daff815.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU1ODAsIm5iZiI6MTczMDI2NTI4MCwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAwOTk2LTQzOGFmNDkzLTMyMDUtNDk0NC1iOWNkLTkyMDc1ZGFmZjgxNS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTE0NDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01NzdmZTI2OGM1MjQwMDA1MDM5ZTAzZTJhNGRiOTliMWMyZGE0YmY4YjAxZWIzNzYxODhhODVjNWIwZTIyMjExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.6sZWiGBPNITeo41IdNMFz-khuTwGOCHL6q8f1deKFyE" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/bc5fb71d-52e8-43f2-8fd7-db108993b5e6" alt="image" width="300px">
 
   - 쿠폰 다운로드 가능
   - 보유한 쿠폰 목록 (전체 / 사용가능) 조회(만료일 기준 오름차순 정렬, 페이지네이션 적용) 가능
@@ -358,14 +359,14 @@ src
 
 - 관리자
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381401344-0df27771-e238-4eb1-a608-5f213731bf81.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU2NjgsIm5iZiI6MTczMDI2NTM2OCwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAxMzQ0LTBkZjI3NzcxLWUyMzgtNGViMS1hNjA4LTVmMjEzNzMxYmY4MS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTE2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNWJiOWE0MjRiYzA2ZDliNjRjOGM5M2M5ZjEwMGEwNzVmNjBjOWZmNDAwMzI2ZTUyODNkNzhmZjRmYWU3ZTZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.p8dRwYbBOtA-V-NWTPnq5QS8hwkxZz1xct5mMwrjh7k" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/852d95bf-be31-4f7d-8f2d-247570723d2c" alt="image" width="300px">
 
   - 회원의 주문 관리 → 주문 상태 변경, 주문 삭제
   - 주문 상태, 날짜별 검색 기능
 
 - 회원
 
-  <img src="https://private-user-images.githubusercontent.com/139744625/381401395-ef0400e1-0025-487e-b517-d29e3327179e.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU2NjgsIm5iZiI6MTczMDI2NTM2OCwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAxMzk1LWVmMDQwMGUxLTAwMjUtNDg3ZS1iNTE3LWQyOWUzMzI3MTc5ZS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTE2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOWMwYjNkMDkyYTUxYzlkNTA2MjUwMDU3MzVmNGQ1MmI4ZjMyODc5Y2ZmYjNiMzZlYjNiMjk3OTlkYjUxMTk0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.f_YeMp1JeFQxTPvYBc5gy5BY6RswslMYRREa_kFGYm8" alt="image" width="300px">
+  <img src="https://github.com/user-attachments/assets/3e6a54b5-9a86-40b1-b291-ff9d3461d0ee" alt="image" width="300px">
 
   - 배송지 입력 후 주문 생성 가능
   - 주문 상세 조회
@@ -379,8 +380,8 @@ src
 ### 배송지
 
 - 회원
-
-  <img src="https://private-user-images.githubusercontent.com/139744625/381401625-597b1d75-94f2-43a0-a6e3-128247899455.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAyNjU3NDUsIm5iZiI6MTczMDI2NTQ0NSwicGF0aCI6Ii8xMzk3NDQ2MjUvMzgxNDAxNjI1LTU5N2IxZDc1LTk0ZjItNDNhMC1hNmUzLTEyODI0Nzg5OTQ1NS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTAzMFQwNTE3MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04OWQ4ZjdmZjZiNTg0NGE4OTFhNzNiOTA4NjVhNDFkMTdkYzU5NTAzZTRkNmNiMDk3N2EyZWZmYzJhNTRiZDJjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.kjtoaIP7ZnA6JcOFnLk9NnC93yhJxnJ0lE6AWkXPr2s" alt="image" width="300px">
+  
+  <img src="https://github.com/user-attachments/assets/d4ed0881-97c9-4fdb-bc13-7381fa04c61e" alt="image" width="300px">
 
   - 배송지는 회원당 최대 5개 저장 가능
     - 5개 제한 → 사용자 편의성 고려
