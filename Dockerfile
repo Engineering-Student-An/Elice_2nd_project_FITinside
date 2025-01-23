@@ -10,7 +10,7 @@ COPY . /build
 RUN gradle build -x test --parallel
 
 # APP
-FROM openjdk:21-slim
+FROM openjdk:17-jdk-slim-buster
 WORKDIR /app
 
 # 빌더 이미지에서 jar 파일만 복사
