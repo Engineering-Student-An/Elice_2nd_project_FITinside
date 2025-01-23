@@ -3,11 +3,11 @@ name: Spring Boot & Gradle CI/CD
 
 # 어떤 이벤트가 발생하면 workflow 실행할 지 명시
 on:
-  # main 브랜치에 push나 pull request 발생 시
+  # master 브랜치에 push나 pull request 발생 시
   push:
-    branches: [ "develop" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "master" ]
 
 # 위 이벤트 발생 시 실행될 작업들
 jobs:
