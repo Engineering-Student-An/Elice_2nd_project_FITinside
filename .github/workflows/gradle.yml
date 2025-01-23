@@ -31,9 +31,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    # Gradle Build (test 제외)
+    # Gradle Build
     - name: Build with Gradle
-      run: ./gradlew clean build --exclude-task test
+      run: ./gradlew clean build
 
     # DockerHub 로그인
     - name: DockerHub Login
