@@ -14,7 +14,7 @@ spring:
   # jpa 설정
   jpa:
     hibernate:
-      ddl-auto: create    # DB 초기화 전략
+#      ddl-auto: create    # DB 초기화 전략
     properties:
       hibernate:
         format_sql: true  # 쿼리 로그 포맷 (저렬)
