@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000") // React 앱의 URL
+                .allowedOrigins("https://fit-inside.netlify.app") // 허용할 출처
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
 }
