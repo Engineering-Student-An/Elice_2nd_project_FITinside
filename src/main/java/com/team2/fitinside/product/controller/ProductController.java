@@ -26,7 +26,7 @@ public class ProductController {
     @ApiResponse(responseCode = "200", description = "상품 목록 조회 성공", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponseDto.class)))
     public ResponseEntity<Page<ProductResponseDto>> getAllProducts(
             @RequestParam(value = "page", defaultValue = "0") int page,
-            @RequestParam(value = "size", defaultValue = "9") int size,
+            @RequestParam(value = "size", defaultValue = "6") int size,
             @RequestParam(value = "sortField", defaultValue = "createdAt") String sortField,
             @RequestParam(value = "sortDir", defaultValue = "desc") String sortDir,
             @RequestParam(value = "keyword", required = false) String keyword) {
