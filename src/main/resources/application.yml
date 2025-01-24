@@ -1,4 +1,9 @@
 spring:
+  web:
+    cors:
+      allowed-origin-patterns: https://fit-inside.netlify.app
+      allow-credentials: true
+
   servlet:
     multipart:
       enabled: true
@@ -14,12 +19,12 @@ spring:
   # jpa 설정
   jpa:
     hibernate:
-#      ddl-auto: create    # DB 초기화 전략
+    #      ddl-auto: create    # DB 초기화 전략
     properties:
       hibernate:
         format_sql: true  # 쿼리 로그 포맷 (저렬)
         show_sql: true    # 쿼리 로그 출력
-#    defer-datasource-initialization: true
+  #    defer-datasource-initialization: true
 
   security:
     oauth2:
