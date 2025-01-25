@@ -36,6 +36,7 @@ spring:
             scope:
               - email
               - profile
+            redirect-uri: https://obpedvusnf.execute-api.ap-northeast-2.amazonaws.com/login/oauth2/code/google
 
   # 메일 SMTP 설정
   mail:
