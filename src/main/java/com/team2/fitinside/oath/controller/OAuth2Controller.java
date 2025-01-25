@@ -13,7 +13,7 @@ public class OAuth2Controller {
 
         // API Gateway URL로 리디렉션
         String apiGatewayUrl = "https://obpedvusnf.execute-api.ap-northeast-2.amazonaws.com/login/oauth2/code/google";
-
+        System.out.println("apiGateWay = " + apiGatewayUrl);
         return "redirect:" + apiGatewayUrl;
     }
 }
