@@ -106,25 +106,6 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 ---
 
-## 브랜치 전략
-
-- Git-flow 전략을 기반으로 master, develop 브랜치와 featue 등의 기능 브랜치를 활용했습니다.
-  - master : 배포 단계에서만 사용하는 브랜치입니다.
-  - develop : 개발 단계에서의 master 역할을 하는 브랜치입니다.
-  - review-develop : 기능 브랜치를 develop에 merge하기 전 코드 리뷰를 통해 정상적으로 동작을 하는지 확인하는 역할을 하는 브랜치입니다.
-  - publish-develop : 배포 환경(배포된 서버 URL 반영, RDS 적용 등)을 적용해 놓은 브랜치입니다.
-  - feature: 기능 단위로 독립적인 개발 환경을 위해 사용하고 merge 후 브랜치를 삭제해주었습니다.
-  - refactor: 기존 코드를 개선하고 구조를 변경하는 브랜치입니다. review-develop으로 merge 후 브랜치를 삭제해 주었습니다.
-  - test: 테스트 코드를 작성하거나 기존 테스트 코드를 리팩토링 하는 브랜치입니다. review-develop으로 merge 후 브랜치를 삭제해 주었습니다.
-
----
-
-## ERD
-
-![ft](https://github.com/user-attachments/assets/2a339199-cab2-48a6-bdf5-dc9ebff0b57d)
-
----
-
 
 ## 트러블 슈팅
 
@@ -142,121 +123,31 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 ---
 
-## 프로젝트 구조
 
-<details>
-  <summary>프로젝트 구조</summary>
-  <p>
+## 브랜치 전략
 
-  ```bash
+- Git-flow 전략을 기반으로 master, develop 브랜치와 featue 등의 기능 브랜치를 활용했습니다.
+  - master : 기준이 되는 브랜치로 배포를 위한 브랜치입니다.
+  - develop : 개발 브랜치로 해당 브랜치를 기준으로 각자 작업한 기능들을 merge 합니다.
+  - review-develop : 기능 브랜치를 develop에 merge하기 전 팀원들간의 코드 리뷰를 통해 작성한 코드 설명 및 공유하기 위한 브랜치입니다.
+  - publish-develop : 배포를 위해 master 브랜치로 보내기 전에 먼저 QA(품질검사)를 하기위한 브랜치입니다.
+  - feature: 기능 단위로 독립적인 개발 환경을 위해 사용하고 merge 후 브랜치를 삭제해주었습니다.
+  - refactor: 기존 코드를 개선하고 구조를 변경하는 브랜치입니다. merge 후 브랜치를 삭제해 주었습니다.
+  - test: 테스트 코드를 작성하거나 기존 테스트 코드를 리팩토링 하는 브랜치입니다. review-develop으로 merge 후 브랜치를 삭제해 주었습니다.
 
-# address : 배송지
-# banner : 광고
-# cart : 장바구니
-# category : 상품 카테고리
-# coupon : 상품 쿠폰
-# global : 전역 예외
-# member : 회원
-# oath : 인증
-# order : 주문
-# produt : 상품
+---
 
-src
-├── main
-│   └── java
-│       └── com
-│           └── team2
-│               └── fitinside
-│                   ├── address
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── banner
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── cart
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── category
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── config
-│                   ├── coupon
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── global
-│                   │   └── exception
-│                   ├── jwt
-│                   ├── member
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   ├── oath
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── repository
-│                   │   ├── service
-│                   │   └── util
-│                   ├── order
-│                   │   ├── common
-│                   │   ├── controller
-│                   │   ├── dto
-│                   │   ├── entity
-│                   │   ├── mapper
-│                   │   ├── repository
-│                   │   └── service
-│                   └── product
-│                       ├── controller
-│                       ├── dto
-│                       ├── entity
-│                       ├── image
-│                       ├── mapper
-│                       ├── repository
-│                       └── service
-└── test
-    └── java
-        └── com
-            └── team2
-                └── fitinside
-                    ├── auth
-                    ├── cart
-                    │   ├── controller
-                    │   └── service
-                    ├── coupon
-                    │   ├── controller
-                    │   └── service
-                    └── member
-                        └── service
 
-                 
+## ERD
 
-```
+![ft](https://github.com/user-attachments/assets/2a339199-cab2-48a6-bdf5-dc9ebff0b57d)
 
-  </p>
-</details>
+---
+
+
+## 와이어프레임
+[Figma 페이지](https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0)
+
 
 ---
 
@@ -296,7 +187,6 @@ src
     부모 카테고리의 드롭 다운을 통해 자식 카테고리 조회 가능
 
   - 이미지 포함 카테고리
-
 
     이미지와 포함 카테고리 조회 가능
 
@@ -470,7 +360,127 @@ src
 ---
 
 ## 상세 API 명세서
+- [swagger](https://obpedvusnf.execute-api.ap-northeast-2.amazonaws.com/swagger-ui/index.html)
 - [API 명세서](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/api-%EB%AA%85%EC%84%B8%EC%84%9C)
+
+---
+
+
+## 프로젝트 구조
+
+<details>
+  <summary>프로젝트 구조</summary>
+  <p>
+
+  ```bash
+
+# address : 배송지
+# banner : 광고
+# cart : 장바구니
+# category : 상품 카테고리
+# coupon : 상품 쿠폰
+# global : 전역 예외
+# member : 회원
+# oath : 인증
+# order : 주문
+# produt : 상품
+
+src
+├── main
+│   └── java
+│       └── com
+│           └── team2
+│               └── fitinside
+│                   ├── address
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── banner
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── cart
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── category
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── config
+│                   ├── coupon
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── global
+│                   │   └── exception
+│                   ├── jwt
+│                   ├── member
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   ├── oath
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── repository
+│                   │   ├── service
+│                   │   └── util
+│                   ├── order
+│                   │   ├── common
+│                   │   ├── controller
+│                   │   ├── dto
+│                   │   ├── entity
+│                   │   ├── mapper
+│                   │   ├── repository
+│                   │   └── service
+│                   └── product
+│                       ├── controller
+│                       ├── dto
+│                       ├── entity
+│                       ├── image
+│                       ├── mapper
+│                       ├── repository
+│                       └── service
+└── test
+    └── java
+        └── com
+            └── team2
+                └── fitinside
+                    ├── auth
+                    ├── cart
+                    │   ├── controller
+                    │   └── service
+                    ├── coupon
+                    │   ├── controller
+                    │   └── service
+                    └── member
+                        └── service
+
+                 
+
+```
+
+  </p>
+</details>
 
 ---
 
