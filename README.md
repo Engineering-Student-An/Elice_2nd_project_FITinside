@@ -1,6 +1,6 @@
 ## 프로젝트 소개
 
-[FITinside](https://fitinside.netlify.app)
+<a href="https://fit-inside.netlify.app" target="_blank">FITinside</a>
 
 <img src="https://github.com/user-attachments/assets/098762e0-b166-4a4a-8e7c-687eda22015a" alt="image" width="300px"/>
 
@@ -77,7 +77,7 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 ### 서비스 배포 환경
 
 - 배포 url
-  - [FITinside](https://fitinside.netlify.app)
+  - <a href="https://fit-inside.netlify.app" target="_blank">FITinside</a>
 
 - 프론트엔드 배포
     - Netlify <img src="https://github.com/user-attachments/assets/f27b8b87-b475-4207-b59a-51bb594ea6e7"  alt="image" width="30"/>
@@ -111,15 +111,15 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 - 비동기 작업 통한 이메일 전송 성능 개선
 
-  - [트러블 슈팅 ‐ 비동기 작업 통한 이메일 전송 성능 개선](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%E2%80%90-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%9E%91%EC%97%85-%ED%86%B5%ED%95%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EC%A0%84%EC%86%A1-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0)
+  - <a href="https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%E2%80%90-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%9E%91%EC%97%85-%ED%86%B5%ED%95%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EC%A0%84%EC%86%A1-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0" target="_blank">트러블 슈팅 ‐ 비동기 작업 통한 이메일 전송 성능 개선</a>
 
 - 쿠폰 도메인에서 여러 메서드에서 n+1 문제가 발생하여 레파지토리에 fetch join을 포함한 jpql을 적용하여 해결
 
-  - [트러블슈팅 - n+1 문제 해결](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%E2%80%90-%EC%BF%A0%ED%8F%B0-%EB%8F%84%EB%A9%94%EC%9D%B8%EC%97%90%EC%84%9C-%EC%97%AC%EB%9F%AC-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90%EC%84%9C-n-1-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%97%AC-%EB%A0%88%ED%8C%8C%EC%A7%80%ED%86%A0%EB%A6%AC%EC%97%90-fetch-join%EC%9D%84-%ED%8F%AC%ED%95%A8%ED%95%9C-jpql%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%98%EC%97%AC-%ED%95%B4%EA%B2%B0)
+  - <a href="https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%E2%80%90-%EC%BF%A0%ED%8F%B0-%EB%8F%84%EB%A9%94%EC%9D%B8%EC%97%90%EC%84%9C-%EC%97%AC%EB%9F%AC-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90%EC%84%9C-n-1-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%97%AC-%EB%A0%88%ED%8C%8C%EC%A7%80%ED%86%A0%EB%A6%AC%EC%97%90-fetch-join%EC%9D%84-%ED%8F%AC%ED%95%A8%ED%95%9C-jpql%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%98%EC%97%AC-%ED%95%B4%EA%B2%B0" target="_blank">트러블 슈팅 - n+1 문제 해결</a>
 
 - 토큰 인증 예외가 아닌 경우에도 401 에러가 반환되는 문제가 발생하여 CustomExceptionHandler에 유효성 검사 예외 처리 메서드를 추가하여 해결
 
-  - [트러블슈팅 - 토큰 인증 예외가 아닌 경우에도 401에러 발생 문제 해결](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%E2%80%90-%ED%86%A0%ED%81%B0-%EC%9D%B8%EC%A6%9D-%EC%98%88%EC%99%B8%EA%B0%80-%EC%95%84%EB%8B%8C-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-401-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%98%ED%99%98%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%97%AC-CustomExceptionHandler%EC%97%90-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%98%EC%97%AC-%ED%95%B4%EA%B2%B0)
+  - <a href="https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%E2%80%90-%ED%86%A0%ED%81%B0-%EC%9D%B8%EC%A6%9D-%EC%98%88%EC%99%B8%EA%B0%80-%EC%95%84%EB%8B%8C-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-401-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%98%ED%99%98%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%97%AC-CustomExceptionHandler%EC%97%90-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%98%EC%97%AC-%ED%95%B4%EA%B2%B0" target="_blank">트러블 슈팅 - 토큰 인증 예외가 아닌 경우에도 401에러 발생 문제 해결</a>
 
 ---
 
@@ -146,7 +146,9 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 
 ## 와이어프레임
-[Figma 페이지](https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0)
+<a href="https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0" target="_blank">Figma 페이지</a>
+
+[//]: # ([Figma 페이지]&#40;https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0&#41;)
 
 
 ---
@@ -286,7 +288,7 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 ---
 
 ## 상세 기능
-- [기능 명세서](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C)
+- <a href="https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C" target="_blank">기능 명세서</a>
 
 ---
 
@@ -360,8 +362,8 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 ---
 
 ## 상세 API 명세서
-- [swagger](https://obpedvusnf.execute-api.ap-northeast-2.amazonaws.com/swagger-ui/index.html)
-- [API 명세서](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/api-%EB%AA%85%EC%84%B8%EC%84%9C)
+- <a href="https://obpedvusnf.execute-api.ap-northeast-2.amazonaws.com/swagger-ui/index.html" target="_blank">Swagger 페이지</a>
+- <a href="https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/api-%EB%AA%85%EC%84%B8%EC%84%9C" target="_blank">API 명세서</a>
 
 ---
 
