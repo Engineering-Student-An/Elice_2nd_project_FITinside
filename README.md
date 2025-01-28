@@ -147,8 +147,7 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 ## 와이어프레임
 <a href="https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0" target="_blank">Figma 페이지</a>
-
-[//]: # ([Figma 페이지]&#40;https://www.figma.com/design/lEzoETSgG6uSSKOJCBeZmf/FITinside?node-id=0-1&p=f&t=dhz474SJ2Km0feAi-0&#41;)
+<img src="https://mosoobucket.s3.ap-northeast-2.amazonaws.com/fit-figma.png" alt="Figma 캡쳐">
 
 
 ---
