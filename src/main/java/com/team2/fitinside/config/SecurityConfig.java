@@ -61,7 +61,7 @@ public class SecurityConfig{
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
-                        .requestMatchers("/oath2/**").permitAll()
+                        .requestMatchers("/oauth2/**").permitAll()
                         .requestMatchers("/api/categories/**", "/api/banners/**").permitAll()
                         .requestMatchers("/api/products/**", "/api/categories/**").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
@@ -90,7 +90,7 @@ public class SecurityConfig{
         config.setAllowCredentials(true);
 
         // 오리진 허용
-        config.setAllowedOrigins(List.of("http://localhost:3000"));
+        config.setAllowedOrigins(List.of("https://fit-inside.netlify.app"));
 
         // 모든 메서드 허용
         config.setAllowedMethods(Arrays.asList(

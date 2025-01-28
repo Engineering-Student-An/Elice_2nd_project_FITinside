@@ -19,12 +19,21 @@ public class TokenApiController {
     @PostMapping("/api/auth/token")
     public ResponseEntity<CreateAccessTokenResponse> createNewAccessToken(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-        String refreshToken = "";
-        for (Cookie cookie : cookies) {
-            if ("refreshToken".equals(cookie.getName())) {
-                refreshToken = cookie.getValue();
-                break;
+        String refreshToken = null; // 초기값을 null로 설정
+
+        // 쿠키가 null인지 확인
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("refreshToken".equals(cookie.getName())) {
+                    refreshToken = cookie.getValue();
+                    break;
+                }
             }
+        }
+
+        // refreshToken이 null인 경우 처리
+        if (refreshToken == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null); // 적절한 에러 응답 반환
         }
 
         String newAccessToken = tokenService.createNewAccessToken(refreshToken);

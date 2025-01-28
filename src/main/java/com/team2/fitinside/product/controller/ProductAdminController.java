@@ -71,7 +71,7 @@ public class ProductAdminController {
 
     // 상품 이미지 삭제 (특정 이미지 삭제)
     @DeleteMapping("/{id}/images")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "https://fit-inside.netlify.app"})
     @Operation(summary = "상품 이미지 삭제", description = "특정 상품의 이미지를 삭제합니다.")
     @ApiResponse(responseCode = "200", description = "이미지 삭제 성공", content = @Content(mediaType = "application/json"))
     @ApiResponse(responseCode = "404", description = "상품을 찾을 수 없음", content = @Content(mediaType = "application/json"))
@@ -87,7 +87,7 @@ public class ProductAdminController {
 
     // 상품 설명 이미지 삭제 (특정 설명 이미지 삭제)
     @DeleteMapping("/{id}/description-images")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "https://fit-inside.netlify.app"})
     @Operation(summary = "상품 설명 이미지 삭제", description = "특정 상품의 설명 이미지를 삭제합니다.")
     @ApiResponse(responseCode = "200", description = "설명 이미지 삭제 성공", content = @Content(mediaType = "application/json"))
     @ApiResponse(responseCode = "404", description = "상품을 찾을 수 없음", content = @Content(mediaType = "application/json"))
