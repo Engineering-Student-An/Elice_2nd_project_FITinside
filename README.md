@@ -128,9 +128,9 @@ FITinside는 LF몰, 무신사와 같은 온라인 쇼핑몰을 모티브로 한 
 
 ## 트러블 슈팅
 
-- Oauth 로그인 시 회원 id가 Long 타입이 아닌 String타입으로 담기는 문제가 발생하여 SecurityContextHolder 디버깅을 통해 데이터 확인 후 로그인 방식에 따라 회원 id를 다르게 가져오도록 처리
+- 비동기 작업 통한 이메일 전송 성능 개선
 
-  - [트러블슈팅 - Oauth 로그인 시 회원 id 문제](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-%E2%80%90-Oauth-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%8B%9C-%ED%9A%8C%EC%9B%90-id%EA%B0%80-Long-%ED%83%80%EC%9E%85%EC%9D%B4-%EC%95%84%EB%8B%8C-String%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EB%8B%B4%EA%B8%B0%EB%8A%94-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%97%AC-SecurityContextHolder-%EB%94%94%EB%B2%84%EA%B9%85%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%99%95%EC%9D%B8-%ED%9B%84-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D%EC%97%90-%EB%94%B0%EB%9D%BC-%ED%9A%8C%EC%9B%90-id%EB%A5%BC-%EB%8B%A4%EB%A5%B4%EA%B2%8C-%EA%B0%80%EC%A0%B8%EC%98%A4%EB%8F%84%EB%A1%9D-%EC%B2%98%EB%A6%AC)
+  - [트러블 슈팅 ‐ 비동기 작업 통한 이메일 전송 성능 개선](https://github.com/Engineering-Student-An/Elice_2nd_project_FITinside/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%E2%80%90-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%9E%91%EC%97%85-%ED%86%B5%ED%95%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EC%A0%84%EC%86%A1-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0)
 
 - 쿠폰 도메인에서 여러 메서드에서 n+1 문제가 발생하여 레파지토리에 fetch join을 포함한 jpql을 적용하여 해결
 
