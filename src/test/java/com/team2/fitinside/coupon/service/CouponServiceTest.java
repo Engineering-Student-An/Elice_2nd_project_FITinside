@@ -111,7 +111,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("보유 쿠폰 목록 조회 - 유효한 쿠폰만 조회")
+    @DisplayName("보유 쿠폰 목록 조회 시 유효한 쿠폰만 조회한 경우 유효한 쿠폰 리스트를 포함한 CouponResponseWrapperDto 를 반환한다.")
     public void findAllActiveCoupons() throws Exception {
 
         //given
@@ -137,7 +137,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("보유 쿠폰 목록 조회 - 모든 쿠폰 조회")
+    @DisplayName("보유 쿠폰 목록 조회 시 모든 쿠폰 조회하는 경우 유효한 쿠폰, 유효하지 않은 쿠폰 모두를 포함한 CouponResponseWrapperDto 를 반환한다.")
     public void findAllCoupons() throws Exception {
 
         //given
@@ -165,7 +165,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("보유 쿠폰 목록 조회 - 쿠폰이 없는 경우")
+    @DisplayName("보유 쿠폰 목록 조회 시 해당 쿠폰이 없는 경우 사이즈가 0인 리스트를 포함한 CouponResponseWrapperDto 를 반환한다.")
     public void findAllCouponsWhenCouponsEmpty() throws Exception {
 
         //given
@@ -189,7 +189,8 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("특정 상품에 적용 가능한 쿠폰 목록 조회")
+    @DisplayName("특정 상품에 적용 가능한 쿠폰 목록 조회 성공 시 " +
+            "비활성화, 사용한 쿠폰, 최소주문금액이 상품보다 적은 쿠폰들은 제외된 적용 가능한 쿠폰만 포함된 AvailableCouponResponseWrapperDto 를 반환한다.")
     public void findAllAvailableCoupons() throws Exception {
 
         //given
@@ -215,7 +216,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 코드로 단일 쿠폰 조회")
+    @DisplayName("쿠폰 코드로 단일 쿠폰 조회 성공 시 해당 쿠폰을 포함한 CouponResponseDto 를 반환한다.")
     public void findCoupon() throws Exception {
 
         //given
@@ -236,7 +237,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("웰컴 쿠폰 목록 조회")
+    @DisplayName("웰컴 쿠폰 목록 조회 성공 시 이름에 웰컴이 포함된 쿠폰 리스트를 포함한 CouponResponseWrapperDto 를 반환한다.")
     public void findWelcomeCoupons() throws Exception {
 
         //given
@@ -257,7 +258,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("보유한 웰컴 쿠폰 목록 조회")
+    @DisplayName("보유한 웰컴 쿠폰 목록 조회 성공 시 이름에 웰컴이 포함된 쿠폰 리스트를 포함한 MyWelcomeCouponResponseWrapperDto 를 반환한다.")
     public void findMyWelcomeCoupons() throws Exception {
 
         //given
@@ -284,7 +285,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 다운로드 - 성공 케이스")
+    @DisplayName("쿠폰 다운로드 성공 시 해당 쿠폰의 id를 반환한다.")
     public void enterCouponCode() throws Exception {
 
         //given
@@ -311,7 +312,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 다운로드 - 등록 이력 존재하는 경우")
+    @DisplayName("쿠폰 다운로드 시 등록 이력 존재하는 경우 DUPLICATE_COUPON 예외를 반환한다.")
     public void enterCouponCode409Exception() throws Exception {
 
         //given
@@ -331,7 +332,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 다운로드 - 비활성화 된 쿠폰 입력하는 경우")
+    @DisplayName("쿠폰 다운로드 시 비활성화 된 쿠폰 입력하는 경우 INVALID_COUPON_DATA 예외를 반환한다.")
     public void enterCouponCode400Exception() throws Exception {
 
         //given
@@ -353,7 +354,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 적용")
+    @DisplayName("쿠폰 적용 성공 시 해당 쿠폰멤버 객체에서 useCoupon() 메서드가 1회 실행된다.")
     public void redeemCoupon() throws Exception {
 
         //given
@@ -374,7 +375,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 적용 - 400에러 (쿠폰을 이미 사용한 경우 / 쿠폰이 비활성화 된 경우 / 기간 만료된 경우)")
+    @DisplayName("쿠폰 적용 시 쿠폰을 이미 사용한 경우이거나 쿠폰이 비활성화 된 경우이거나 기간 만료된 경우 CustomException 예외를 반환한다.")
     public void redeemCoupon400ExceptionFirstCase() throws Exception {
 
         //given
@@ -395,7 +396,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 적용된 주문 찾기")
+    @DisplayName("쿠폰 적용된 주문 찾기 성공 시 해당 쿠폰이 적용된 주문의 id를 반환한다.")
     public void findOrder() throws Exception {
 
         //given
@@ -423,7 +424,7 @@ class CouponServiceTest {
     }
 
     @Test
-    @DisplayName("403에러 (로그인 하지 않은 경우)")
+    @DisplayName("쿠폰 관련 메서드 실행 시 로그인 하지 않은 경우 USER_NOT_AUTHORIZED 예외를 반환한다.")
     public void getAuthenticatedMemberIdFail() throws Exception {
 
         //given
