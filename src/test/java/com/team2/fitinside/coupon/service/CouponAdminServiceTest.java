@@ -110,7 +110,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("유효기간이 지난 쿠폰 비활성화")
+    @DisplayName("유효기간이 지난 쿠폰 비활성화 성공 시 해당 쿠폰 객체의 비활성화 메서드 (=deActive())가 1번 실행된다.")
     public void testDeActiveCouponsByExpiredAt() {
         //given
         Coupon spyCoupon1 = spy(createTestCoupon(4L, "Expired Coupon", "EXPIRED", 0, 0, true));
@@ -128,7 +128,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 목록 조회 - 유효한 쿠폰만 조회")
+    @DisplayName("쿠폰 목록 조회 시 유효한 쿠폰만 조회하는 경우 유효하지 않은 쿠폰은 조회되지 않는다.")
     public void findAllActiveCoupons() throws Exception {
         //given
         setUpAdminMember();
@@ -151,7 +151,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 목록 조회 - 모든 쿠폰 조회")
+    @DisplayName("쿠폰 목록 조회 시 모든 쿠폰 조회하는 경우 유효한 쿠폰, 유효하지 않은 쿠폰 모두 조회된다.")
     public void findAllCoupons() throws Exception {
         //given
         setUpAdminMember();
@@ -176,7 +176,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 목록 조회 - 쿠폰이 없는 경우")
+    @DisplayName("쿠폰 목록 조회 시 쿠폰이 없는 경우 사이즈가 0인 회원 리스트를 포함한 CouponResponseWrapperDto 를 반환한다.")
     public void findAllCouponsWhenCouponsEmpty() throws Exception {
         //given
         setUpAdminMember();
@@ -197,7 +197,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 보유한 회원 목록 조회")
+    @DisplayName("특정 쿠폰 보유한 회원 목록 조회 성공 시 쿠폰을 보유한 회원만 포함한 CouponMemberResponseWrapperDto 를 반환한다.")
     public void findCouponMembers() throws Exception {
         //given
         setUpAdminMember();
@@ -219,7 +219,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 보유한 회원 목록 조회 - 회원이 없는 경우")
+    @DisplayName("쿠폰 보유한 회원 목록 조회 시 보유한 회원이 없는 경우 사이즈가 0인 회원 리스트를 포함한 CouponMemberResponseWrapperDto 를 반환한다.")
     public void findCouponMembersWhenMembersEmpty() throws Exception {
         //given
         setUpAdminMember();
@@ -240,7 +240,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 생성 - 카테고리 존재")
+    @DisplayName("쿠폰 생성 시 카테고리 존재하는 경우 생성된 쿠폰 객체에서 setCategory() 메서드가 1번 실행된다.")
     public void createCoupon() throws Exception {
         //given
         setUpAdminMember();
@@ -272,7 +272,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 생성 - 모든 카테고리")
+    @DisplayName("쿠폰 생성 사 모든 카테고리로 생성하는 경우 생성된 쿠폰 객체에서 setCategory() 메서드가 실행되지 않는다.")
     public void createCouponAllCategories() throws Exception {
         //given
         setUpAdminMember();
@@ -302,7 +302,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 생성 - 400에러 (쿠폰 생성 정보가 유효하지 않은 경우)")
+    @DisplayName("쿠폰 생성 시 쿠폰 생성 정보가 유효하지 않은 경우 CustomException 예외를 반환한다.")
     public void createCouponWithInvalidData() throws Exception {
         //given
         setUpAdminMember();
@@ -335,7 +335,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 비활성화")
+    @DisplayName("쿠폰 비활성화 성공 시 해당 쿠폰의 id를 반환하고 deActive() 메서드가 1회 실행된다.")
     public void deActiveCoupon() throws Exception {
         //given
         setUpAdminMember();
@@ -353,7 +353,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 비활성화 - 쿠폰을 찾을 수 없는 경우")
+    @DisplayName("쿠폰 비활성화 시 쿠폰을 찾을 수 없는 경우 COUPON_NOT_FOUND 예외를 반환한다.")
     public void deActiveCouponWhenCouponNotFound() throws Exception {
         //given
         setUpAdminMember();
@@ -367,7 +367,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 이메일 전송")
+    @DisplayName("쿠폰 이메일 전송 성공 시 이메일 주소가 회원의 이메일 주소와 동일하며 sendEmail() 메서드가 1회 호출된다.")
     public void sendEmail() throws Exception {
         //given
         setUpAdminMember();
@@ -387,7 +387,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 이메일 전송 - 비활성화된 쿠폰인 경우")
+    @DisplayName("쿠폰 이메일 전송 시 비활성화된 쿠폰인 경우 INVALID_COUPON_DATA 예외를 반환한다.")
     public void sendEmailWhenCouponIsInActive() throws Exception {
         //given
         setUpAdminMember();
@@ -403,7 +403,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("쿠폰 미보유 회원 목록 조회")
+    @DisplayName("쿠폰 미보유 회원 목록 조회 성공 시 쿠폰을 보유하지 않은 회원 리스트를 포함한 CouponMemberResponseWrapperDto 를 반환한다.")
     public void findMembersWithOutCoupons() throws Exception {
         //given
         setUpAdminMember();
@@ -424,7 +424,7 @@ class CouponAdminServiceTest {
     }
 
     @Test
-    @DisplayName("관리자 권한이 없는 경우")
+    @DisplayName("관리자 권한이 필요한 메서드 실행 시 권한이 없는 경우 USER_NOT_AUTHORIZED 예외를 반환한다.")
     public void checkAdminFail() throws Exception {
         //given
         given(securityUtil.getCurrentMemberId()).willReturn(userMember.getId());

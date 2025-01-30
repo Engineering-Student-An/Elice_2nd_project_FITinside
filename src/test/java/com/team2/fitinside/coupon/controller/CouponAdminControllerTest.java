@@ -40,7 +40,9 @@ class CouponAdminControllerTest {
     @MockBean
     private CouponAdminService couponAdminService;
 
-    private static final String URL = "/api/admin/coupons";
+    private static final String URL = "/api/admin/coupon";
+    private static final String URLS = "/api/admin/coupons";
+
     private static final int PAGE = 1;
 
     @Autowired
@@ -71,7 +73,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(1)
-    @DisplayName("쿠폰 목록 조회 - 유효한 쿠폰만 조회")
+    @DisplayName("쿠폰 목록 조회 시 유효한 쿠폰만 조회하는 경우 성공 시 상태코드 200을 반환하며 유효한 쿠폰먼 포함된 CouponResponseWrapperDto 를 바디에 포함한다.")
     void findAllActiveCoupons() throws Exception {
         //given
         boolean includeInActiveCoupons = false;
@@ -87,7 +89,7 @@ class CouponAdminControllerTest {
         String expectedJson = objectMapper.writeValueAsString(expectedResponse);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "?includeInActiveCoupons=" + includeInActiveCoupons));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "?includeInActiveCoupons=" + includeInActiveCoupons));
 
         //then
         resultActions
@@ -97,7 +99,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(2)
-    @DisplayName("쿠폰 목록 조회 - 전체 쿠폰 조회")
+    @DisplayName("쿠폰 목록 조회 시 전체 쿠폰 조회하는 경우 성공 시 상태코드 200을 반환하며 모든 쿠폰이 포함된 CouponResponseWrapperDto 를 바디에 포함한다.")
     void findAllCoupons() throws Exception {
         //given
         boolean includeInActiveCoupons = true;
@@ -111,7 +113,7 @@ class CouponAdminControllerTest {
                 );
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "?includeInActiveCoupons=" + includeInActiveCoupons));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "?includeInActiveCoupons=" + includeInActiveCoupons));
 
         //then
         resultActions
@@ -124,14 +126,14 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(3)
-    @DisplayName("쿠폰 목록 조회 - 403에러 (권한 없는 경우)")
+    @DisplayName("쿠폰 목록 조회 시 권한이 없는 경우 상태코드 403을 반환하고 에러코드는 USER_NOT_AUTHORIZED 와 같다.")
     public void findAllCoupons403Exception() throws Exception {
         //given
         CustomException authorizedException = new CustomException(ErrorCode.USER_NOT_AUTHORIZED);
         given(couponAdminService.findAllCoupons(PAGE, false)).willThrow(authorizedException);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL));
+        ResultActions resultActions = mockMvc.perform(get(URLS));
 
         //then
         resultActions
@@ -142,7 +144,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(4)
-    @DisplayName("특정 쿠폰 보유 회원 목록 조회")
+    @DisplayName("특정 쿠폰 보유 회원 목록 조회 성공 시 상태코드 200을 반환하며 해당 회원들의 이름과 이메일이 포함된 CouponMemberResponseWrapperDto 를 바디에 포함한다.")
     void findCouponMembers() throws Exception {
         //given
         Long couponId = coupon1.getId();
@@ -154,7 +156,7 @@ class CouponAdminControllerTest {
                 .willReturn(new CouponMemberResponseWrapperDto(message, List.of(dto1, dto2), 1));
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/" + couponId));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/" + couponId));
 
         //then
         resultActions
@@ -171,7 +173,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(5)
-    @DisplayName("쿠폰 생성")
+    @DisplayName("쿠폰 생성 성공 시 상태코드 201을 반환한다.")
     void createCoupon() throws Exception {
         //given
         CouponCreateRequestDto dto = CouponCreateRequestDto.builder()
@@ -199,7 +201,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(6)
-    @DisplayName("쿠폰 생성 - 400에러 (쿠폰 생성 정보가 유효하지 않는 경우)")
+    @DisplayName("쿠폰 생성 시 쿠폰 생성 정보가 유효하지 않는 경우 상태코드 400을 반환하고 에러코드는 INVALID_COUPON_CREATE_DATA 와 같다.")
     void createCoupon400Exception() throws Exception {
         //given
         CustomException invalidCouponException = new CustomException(ErrorCode.INVALID_COUPON_CREATE_DATA);
@@ -232,7 +234,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(7)
-    @DisplayName("쿠폰 비활성화")
+    @DisplayName("쿠폰 비활성화 성공 시 상태코드 200을 반환한다.")
     void deActiveCoupon() throws Exception {
         //given
         Long couponId = coupon1.getId();
@@ -250,7 +252,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(8)
-    @DisplayName("쿠폰 비활성화 - 404에러 (쿠폰을 찾을 수 없는 경우)")
+    @DisplayName("쿠폰 비활성화 시 쿠폰을 찾을 수 없는 경우 상태코드 404를 반환하고 에러코드는 COUPON_NOT_FOUND 와 같다.")
     void deActiveCoupon404Exception() throws Exception {
         //given
         Long couponId = coupon1.getId();
@@ -269,7 +271,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(9)
-    @DisplayName("쿠폰 이메일 전송")
+    @DisplayName("쿠폰 이메일 전송 성공 시 상태코드 200을 반환한다.")
     void sendCouponEmails() throws Exception {
         //given
         Long couponId = coupon1.getId();
@@ -292,7 +294,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(10)
-    @DisplayName("쿠폰 이메일 전송 - 400에러 (이메일 정보가 유효하지 않은 경우)")
+    @DisplayName("쿠폰 이메일 전송 시 이메일 정보가 유효하지 않은 경우 상태코드 400을 반환하고 에러코드는 INVALID_EMAIL_DATA 와 같다.")
     void sendCouponEmails400Exception() throws Exception {
         //given
         Long couponId = coupon1.getId();
@@ -316,7 +318,7 @@ class CouponAdminControllerTest {
 
     @Test
     @Order(11)
-    @DisplayName("특정 쿠폰 미보유 회원 조회")
+    @DisplayName("특정 쿠폰 미보유 회원 조회 성공 시 상태코드 200을 반환하고 해당 회원들의 이메일과 이름이 담긴 리스트를 포함한 CouponMemberResponseWrapperDto 를 바디에 포함한다.")
     void findMembersWithOutCoupons() throws Exception {
         //given
         Long couponId = 3L;
@@ -329,7 +331,7 @@ class CouponAdminControllerTest {
                 .willReturn(new CouponMemberResponseWrapperDto(message, List.of(dto1, dto2), 1));
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/" + couponId + "/members"));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/" + couponId + "/members"));
 
         //then
         resultActions
