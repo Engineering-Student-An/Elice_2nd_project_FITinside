@@ -91,7 +91,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 목록 조회")
+    @DisplayName("장바구니 목록 조회 성공 시 CartResponseWrapperDto를 반환한다.")
     public void findAllCarts() throws Exception {
         //given
         given(securityUtil.getCurrentMemberId()).willReturn(loginMember.getId());
@@ -108,7 +108,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 목록 조회 - 403에러 (권한 없는 경우)")
+    @DisplayName("장바구니 목록 조회 시 권한이 없는 경우 CustomException에 해당하는 예외를 반환한다.")
     public void findAllCarts403Exception() throws Exception {
         //given
         // securityUtil.getCurrentMemberId()가 RuntimeException을 반환한 경우
@@ -121,7 +121,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 생성")
+    @DisplayName("장바구니 생성 성공 시 저장된 장바구니의 id를 반환한다.")
     public void createCart() throws Exception {
 
         //given
@@ -147,7 +147,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 생성 - 동일한 장바구니 존재 시 수정")
+    @DisplayName("장바구니 생성 시 동일한 장바구니가 존재하는 경우 기존의 장바구니를 수정한다.")
     public void createCartWhenCartExists() throws Exception {
 
         //given
@@ -171,7 +171,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 생성 - 400에러 (수량 범위 예외)")
+    @DisplayName("장바구니 생성 시 상품 수량 범위를 벗어나면 CART_OUT_OF_RANGE 예외를 반환한다.")
     public void createCart400ExceptionCartOutOfRange() throws Exception {
 
         //given
@@ -193,7 +193,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 생성 - 400에러 (재고 수량 초과)")
+    @DisplayName("장바구니 생성 시 상품의 재고 수량을 초과하는 경우 OUT_OF_STOCK 예외를 반환한다.")
     public void createCart400ExceptionOutOfStock() throws Exception {
 
         //given
@@ -208,7 +208,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 수정")
+    @DisplayName("장바구니 수정 성공 시 수정된 장바구니의 id를 반환한다.")
     public void updateCart() throws Exception {
         //given
         CartUpdateRequestDto dto = new CartUpdateRequestDto(product1.getId(), 7);
@@ -228,7 +228,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 수정 - 수량이 동일한 경우")
+    @DisplayName("장바구니 수정 시 기존 수량과 동일한 경우 해당 장바구니 객체에서 수량 변경 메서드 (=updateQuantity()) 가 호출되지 않는다.")
     public void updateCartSameQuantity() throws Exception {
         //given
         // 현재 장바구니의 수량과 동일한 요청 생성
@@ -248,7 +248,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 단일 삭제")
+    @DisplayName("장바구니 단일 삭제 성공 시 삭제된 장바구니의 id를 반환한다.")
     public void deleteCart() throws Exception {
         //given
         Long productId = product1.getId();  // deleteCart 메서드에 넘길 productId 파라미터
@@ -265,7 +265,7 @@ class CartServiceTest {
     }
 
     @Test
-    @DisplayName("장바구니 초기화")
+    @DisplayName("장바구니 초기화 성공 시 조회된 장바구니 List를 포함하여 deleteAll() 메서드가 1번 실행된다.")
     public void clearCart() throws Exception {
         //given
         given(securityUtil.getCurrentMemberId()).willReturn(loginMember.getId());

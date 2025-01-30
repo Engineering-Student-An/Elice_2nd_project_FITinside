@@ -44,7 +44,8 @@ class CartControllerTest {
     private ObjectMapper objectMapper;
 
     // 기본 장바구니 컨트롤러의 URL
-    private static final String URL = "/api/carts";
+    private static final String URL = "/api/cart";
+    private static final String URLS = "/api/carts";
 
     @BeforeEach
     void setUp() {
@@ -80,13 +81,13 @@ class CartControllerTest {
 
     @Test
     @Order(1)
-    @DisplayName("장바구니 목록 조회")
+    @DisplayName("장바구니 목록 조회 성공 시 상태코드 200을 반환하고 해당 목록들이 담긴 리스트를 포함한 CartResponseWrapperDto 를 바디에 포함한다.")
     public void findCart() throws Exception {
         //given
         mockCartServiceFindAllCarts();
 
         //when (/api/carts GET 요청 시)
-        ResultActions resultActions = mockMvc.perform(get(URL));
+        ResultActions resultActions = mockMvc.perform(get(URLS));
 
         //then
         resultActions
@@ -99,14 +100,14 @@ class CartControllerTest {
 
     @Test
     @Order(2)
-    @DisplayName("장바구니 조회 - 403에러 (권한 없는 경우)")
+    @DisplayName("장바구니 목록 조회 시 권한이 없다면 상태코드 403을 반환하고 에러코드는 USER_NOT_AUTHORIZED 와 같다.")
     public void findCart403Exception() throws Exception {
         //given
         CustomException authorizedException = new CustomException(ErrorCode.USER_NOT_AUTHORIZED);
         given(cartService.findAllCarts()).willThrow(authorizedException);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL));
+        ResultActions resultActions = mockMvc.perform(get(URLS));
 
         //then
         resultActions
@@ -117,7 +118,7 @@ class CartControllerTest {
 
     @Test
     @Order(3)
-    @DisplayName("장바구니 생성")
+    @DisplayName("장바구니 생성 성공 시 상태코드 201을 반환한다.")
     public void createCart() throws Exception {
         //given
         CartCreateRequestDto dto = createCartCreateRequestDto(1L, 10);
@@ -137,7 +138,7 @@ class CartControllerTest {
 
     @Test
     @Order(4)
-    @DisplayName("장바구니 생성 - 400에러 (수량 범위 벗어난 경우)")
+    @DisplayName("장바구니 생성 시 상품의 수량 범위를 벗어난 경우 상태코드 400을 반환하고 에러코드는 CART_OUT_OF_RANGE 와 같다.")
     public void createCart400Exception() throws Exception {
         //given
         CartCreateRequestDto dto = createCartCreateRequestDto(1L, 21);
@@ -158,7 +159,7 @@ class CartControllerTest {
 
     @Test
     @Order(5)
-    @DisplayName("장바구니 수정")
+    @DisplayName("장바구니 수정 성공 시 상태코드 200을 반환한다.")
     public void updateCart() throws Exception {
         //given
         CartUpdateRequestDto dto = createCartUpdateRequestDto(1L, 20);
@@ -178,7 +179,7 @@ class CartControllerTest {
 
     @Test
     @Order(6)
-    @DisplayName("장바구니 수정 - 404에러 (장바구니를 찾을 수 없는 경우)")
+    @DisplayName("장바구니 수정 시 해당 장바구니를 찾을 수 없는 경우 상태코드 404를 반환하고 에러코드는 CART_NOT_FOUND 와 같다.")
     public void updateCart404Error() throws Exception {
         //given
         CartUpdateRequestDto dto = createCartUpdateRequestDto(2L, 5);
@@ -199,7 +200,7 @@ class CartControllerTest {
 
     @Test
     @Order(7)
-    @DisplayName("장바구니 단건 삭제")
+    @DisplayName("장바구니 단건 삭제 성공 시 상태코드 200을 반환한다.")
     public void deleteCart() throws Exception {
         //given
         Long productId = 1L;
@@ -218,13 +219,13 @@ class CartControllerTest {
 
     @Test
     @Order(8)
-    @DisplayName("장바구니 초기화")
+    @DisplayName("장바구니 초기화 성공 시 상태코드 200을 반환한다.")
     public void clearCart() throws Exception {
         //given
         willDoNothing().given(cartService).clearCart();
 
         //when
-        ResultActions resultActions = mockMvc.perform(delete(URL));
+        ResultActions resultActions = mockMvc.perform(delete(URLS));
 
         //then
         resultActions

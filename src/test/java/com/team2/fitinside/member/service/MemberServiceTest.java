@@ -9,6 +9,7 @@ import com.team2.fitinside.member.dto.MemberResponseDto;
 import com.team2.fitinside.member.entity.Member;
 import com.team2.fitinside.member.mapper.MemberMapper;
 import com.team2.fitinside.member.repository.MemberRepository;
+import com.team2.fitinside.order.repository.OrderRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,6 +33,9 @@ class MemberServiceTest {
 
     @Mock
     private MemberRepository memberRepository;
+
+    @Mock
+    private OrderRepository orderRepository;
 
     @Mock
     private SecurityUtil securityUtil;

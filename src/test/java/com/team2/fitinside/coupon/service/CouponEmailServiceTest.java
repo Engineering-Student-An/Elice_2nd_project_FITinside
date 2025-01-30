@@ -41,7 +41,7 @@ class CouponEmailServiceTest {
     }
 
     @Test
-    @DisplayName("이메일 전송 - 성공")
+    @DisplayName("이메일 전송 성공 시 JavaMailSender 의 send() 메서드가 1회 호출된다.")
     public void sendEmail() throws Exception {
 
         //given
@@ -55,7 +55,7 @@ class CouponEmailServiceTest {
     }
 
     @Test
-    @DisplayName("이메일 전송 - 유효하지 않은 이메일인 경우")
+    @DisplayName("이메일 전송 시 유효하지 않은 이메일인 경우 INVALID_EMAIL_DATA 예외를 반환한다.")
     public void sendEmailInvalidEmailData() throws Exception {
 
         //given

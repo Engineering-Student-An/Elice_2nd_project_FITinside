@@ -39,7 +39,8 @@ class CouponControllerTest {
     @MockBean
     private CouponService couponService;
 
-    private static final String URL = "/api/coupons";
+    private static final String URL = "/api/coupon";
+    private static final String URLS = "/api/coupons";
     private static final int PAGE = 1;
 
     @Autowired
@@ -70,7 +71,7 @@ class CouponControllerTest {
 
     @Test
     @Order(1)
-    @DisplayName("쿠폰 목록 조회 - 유효한 쿠폰만 조회")
+    @DisplayName("쿠폰 목록 조회 시 유효한 쿠폰만 조회하는 경우 성공 시 상태코드 200을 반환하고 유효한 쿠폰만을 담은 리스트를 포함한 CouponResponseWrapperDto 를 바디에 포함한다.")
     void findAllActiveCoupons() throws Exception {
         //given
         boolean includeInActiveCoupons = false;
@@ -86,7 +87,7 @@ class CouponControllerTest {
                 .willReturn(expectedResponse);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "?includeInActiveCoupons=" + includeInActiveCoupons));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "?includeInActiveCoupons=" + includeInActiveCoupons));
 
         //then
         resultActions
@@ -96,7 +97,7 @@ class CouponControllerTest {
 
     @Test
     @Order(2)
-    @DisplayName("쿠폰 목록 조회 - 전체 쿠폰 조회")
+    @DisplayName("쿠폰 목록 조회 시 전체 쿠폰 조회하는 경우 성공 시 상태코드 200을 반환하고 유효한 쿠폰, 유효하지 않은 쿠폰 모두를 담은 리스트를 포함한 CouponResponseWrapperDto 를 반환한다.")
     void findAllCoupons() throws Exception {
         //given
         boolean includeInActiveCoupons = true;
@@ -108,7 +109,7 @@ class CouponControllerTest {
                 .willReturn(new CouponResponseWrapperDto("쿠폰 목록 조회 완료했습니다!", List.of(dto1, dto2), 1));
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "?includeInActiveCoupons=" + includeInActiveCoupons));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "?includeInActiveCoupons=" + includeInActiveCoupons));
 
         //then
         resultActions
@@ -121,14 +122,14 @@ class CouponControllerTest {
 
     @Test
     @Order(3)
-    @DisplayName("쿠폰 목록 조회 - 403에러 (권한 없는 경우)")
+    @DisplayName("쿠폰 목록 조회 시 권한이 없는 경우 상태코드 403을 반환하고 에러코드는 USER_NOT_AUTHORIZED 이다.")
     public void findAllCoupons403Exception() throws Exception {
         //given
         CustomException authorizedException = new CustomException(ErrorCode.USER_NOT_AUTHORIZED);
         given(couponService.findAllCoupons(PAGE, false)).willThrow(authorizedException);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL));
+        ResultActions resultActions = mockMvc.perform(get(URLS));
 
         //then
         resultActions
@@ -139,7 +140,7 @@ class CouponControllerTest {
 
     @Test
     @Order(4)
-    @DisplayName("적용 가능 쿠폰 목록 조회")
+    @DisplayName("적용 가능 쿠폰 목록 조회 성공 시 상태코드 200을 반환하고 해당 쿠폰들이 담긴 리스트를 포함한 AvailableCouponResponseWrapperDto 를 바디에 포함한다.")
     void findAllAvailableCoupons() throws Exception {
         //given
         Long productId = 1L;
@@ -158,7 +159,7 @@ class CouponControllerTest {
         String expectedJson = objectMapper.writeValueAsString(expectedResponse);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/" + productId));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/" + productId));
 
         //then
         resultActions
@@ -168,7 +169,7 @@ class CouponControllerTest {
 
     @Test
     @Order(5)
-    @DisplayName("적용 가능 쿠폰 목록 조회 - 404에러 (상품을 찾을 수 없는 경우)")
+    @DisplayName("적용 가능 쿠폰 목록 조회 시 상품을 찾을 수 없는 경우 상태코드 404를 반환하고 에러코드는 PRODUCT_NOT_FOUND 이다.")
     void findAllAvailableCoupons404Exception() throws Exception {
         //given
         Long productId = 1L;
@@ -176,7 +177,7 @@ class CouponControllerTest {
         given(couponService.findAllAvailableCoupons(productId)).willThrow(productNotFoundException);
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/" + productId));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/" + productId));
 
         //then
         resultActions
@@ -187,7 +188,7 @@ class CouponControllerTest {
 
     @Test
     @Order(6)
-    @DisplayName("쿠폰 검색")
+    @DisplayName("쿠폰 검색 성공 시 상태코드 200와 해당 쿠폰의 정보들을 반환한다.")
     void findCoupon() throws Exception {
         //given
         String couponCode = coupon1.getCode();
@@ -209,7 +210,7 @@ class CouponControllerTest {
 
     @Test
     @Order(7)
-    @DisplayName("쿠폰 검색 - 400에러 (쿠폰 정보가 유효하지 않은 경우)")
+    @DisplayName("쿠폰 검색 시 쿠폰 정보가 유효하지 않은 경우 상태코드 400을 반환하고 에러코드는 INVALID_COUPON_DATA 이다.")
     void findCoupon400Exception() throws Exception {
         //given
         String couponCode = "ERROR1";
@@ -229,7 +230,7 @@ class CouponControllerTest {
 
     @Test
     @Order(8)
-    @DisplayName("웰컴 쿠폰 검색")
+    @DisplayName("웰컴 쿠폰 검색 성공 시 상태코드 200을 반환하고 해당 쿠폰을 담은 리스트를 포함한 CouponResponseWrapperDto 를 바디에 포함한다.")
     void findWelcomeCoupons() throws Exception {
         //given
         String message = "쿠폰 목록 조회 완료했습니다!";
@@ -240,7 +241,7 @@ class CouponControllerTest {
                 .willReturn(new CouponResponseWrapperDto(message, List.of(dto1, dto2), 1));
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/welcome"));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/welcome"));
 
         //then
         resultActions
@@ -251,7 +252,7 @@ class CouponControllerTest {
 
     @Test
     @Order(9)
-    @DisplayName("보유한 웰컴 쿠폰 검색")
+    @DisplayName("보유한 웰컴 쿠폰 검색 성공 시 상태코드 200을 반환하고 해당 쿠폰들이 담긴 리스트를 포함한 MyWelcomeCouponResponseWrapperDto 를 바디에 포함한다.")
     void findMyWelcomeCoupons() throws Exception {
         //given
         String message = "쿠폰 목록 조회 완료했습니다!";
@@ -262,7 +263,7 @@ class CouponControllerTest {
                 .willReturn(new MyWelcomeCouponResponseWrapperDto(message, List.of(dto1.getId(), dto2.getId())));
 
         //when
-        ResultActions resultActions = mockMvc.perform(get(URL + "/my-welcome"));
+        ResultActions resultActions = mockMvc.perform(get(URLS + "/my-welcome"));
 
         //then
         resultActions
@@ -275,7 +276,7 @@ class CouponControllerTest {
 
     @Test
     @Order(10)
-    @DisplayName("쿠폰 다운로드")
+    @DisplayName("쿠폰 다운로드 성공 시 상태코드 201을 반환한다.")
     void enterCouponCode() throws Exception {
         //given
         Long couponMemberId = 1L;
@@ -298,7 +299,7 @@ class CouponControllerTest {
 
     @Test
     @Order(11)
-    @DisplayName("쿠폰 다운로드 - 409에러 (등록 이력이 존재한 경우)")
+    @DisplayName("쿠폰 다운로드 시 등록 이력이 존재한 경우 상태코드 409를 반환하고 에러코드는 DUPLICATE_COUPON 과 같다.")
     void enterCouponCode409Exception() throws Exception {
         //given
         String couponCode = "ERROR1";
@@ -321,7 +322,7 @@ class CouponControllerTest {
 
     @Test
     @Order(12)
-    @DisplayName("쿠폰 사용")
+    @DisplayName("쿠폰 사용 성공 시 상태코드 200을 반환한다.")
     void redeemCoupon() throws Exception {
         //given
         Long couponMemberId = 1L;
@@ -341,7 +342,7 @@ class CouponControllerTest {
 
     @Test
     @Order(13)
-    @DisplayName("쿠폰 사용 내역 조회")
+    @DisplayName("쿠폰 사용 내역 조회 성공 시 상태코드 200을 반환하고 해당 쿠폰이 적용된 주문의 id를 바디에 포함한다.")
     void findOrder() throws Exception {
         //given
         Long orderId = 1L;
