@@ -21,8 +21,7 @@ import java.util.List;
 @SQLDelete(sql = "UPDATE orders SET is_deleted = true WHERE order_id = ?")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Builder
+@Getter @Builder
 public class Order {
 
     @Id
