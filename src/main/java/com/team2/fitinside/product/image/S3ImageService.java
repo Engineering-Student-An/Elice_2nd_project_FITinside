@@ -59,6 +59,7 @@ public class S3ImageService {
         List<String> allowedExtensionList = Arrays.asList("jpg", "jpeg", "png", "gif");
 
         if (!allowedExtensionList.contains(extension)) {
+            
             throw new CustomException(INVALID_FILE_EXTENSION);
         }
     }
